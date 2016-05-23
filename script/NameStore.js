@@ -17,13 +17,13 @@
  */
 
 
-function NameStore(){
+function NameStore(game){
 
 this.data={};
 
 //constructor
 this._constructor = function(){
-
+	this.game = game;
 }
 
 /**
@@ -78,7 +78,7 @@ this._resolveLists=function(region,race,callback){
 }
 
 this._load=function(name){
-	return $.getJSON('./template/names/npc/'+name+'.json');
+	return $.getJSON('./template/'+game+'/names/npc/'+name+'.json');
 }
 
 this._loadSuccess=function(nameSpace,callback,data){

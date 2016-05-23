@@ -19,18 +19,14 @@
 $(document).ready(function(){
 	$('.javascriptWarning').remove();
 
+	
 	var form = new NPCForm();
-	var npcStore = new ListStore('./template/npc/NPC.json');
-	var regionStore = new ListStore('./template/Region.json');
-	var motivationStore = new ListStore('./template/npc/Motivations.json');
-	var viceStore = new ListStore('./template/npc/Vices.json');
-	var nameStore = new NameStore();
-
-	form.npcStore=npcStore;
-	form.regionStore=regionStore;
-	form.motivationStore=motivationStore;
-	form.nameStore=nameStore;
-	form.viceStore=viceStore;
+	var gameStore = new ListStore('./template/Games.json');
+	var npcStore;
+	var regionStore;
+	var motivationStore;
+	var viceStore;
+	var nameStore;
 
 
 	var saveAsFile=function(t,f,m) {
@@ -82,24 +78,54 @@ $(document).ready(function(){
 		return data;
 	}
 
-	$(npcStore).on('loaded',function(){
-		console.log('loaded npc store');
-		form.setSelect('race',this.get('Race'));
-		form.setSelect('gender',this.get('Gender'));
-		form.setSelect('age',this.get('Age'));
-		form.setSelect('disposition',this.get('Disposition'));
+	var loadStores = function(game){
+		npcStore = new ListStore('./template/'+game+'/npc/NPC.json');
+		regionStore = new ListStore('./template/'+game+'/Region.json');
+		motivationStore = new ListStore('./template/'+game+'/npc/Motivations.json');
+		viceStore = new ListStore('./template/'+game+'/npc/Vices.json');
+		nameStore = new NameStore(game);
+
+		form.npcStore=npcStore;
+		form.regionStore=regionStore;
+		form.motivationStore=motivationStore;
+		form.nameStore=nameStore;
+		form.viceStore=viceStore;
+
+		$(npcStore).on('loaded',function(){
+			console.log('loaded npc store',this.get('Race'));
+			form.setSelect('race',this.get('Race'));
+			form.setSelect('gender',this.get('Gender'));
+			form.setSelect('age',this.get('Age'));
+			form.setSelect('disposition',this.get('Disposition'));
+		});
+
+		$(regionStore).on('loaded',function(){
+			console.log('loaded region');
+			form.setSelect('region',this.get('Region'));
+		});
+	};
+
+	$('.header select[name="games"]').change(function(event){
+		console.log('games selection was changed.');
+
+		loadStores($(this).val());
 	});
 
-	$(regionStore).on('loaded',function(){
-		console.log('loaded region');
-		form.setSelect('region',this.get('Region'));
+
+	$(gameStore).on('loaded',function(){
+		var select = $('.header select[name="games"]');
+		var list = gameStore.get('Game');
+		select.empty();
+
+		for(var i=0;i<list.length;i++){
+			select.append('<option>'+list[i]+'</option');
+		}
+
+		select.trigger('change');
+		
 	});
 
-	$(motivationStore).on('loaded',function(){
-		//console.log('loaded motivations');
-	});
-
-
+	//export button
 	$('.header .exportButton').click(function(event){
 		event.preventDefault();
 		console.log('clicked export');
@@ -111,6 +137,8 @@ $(document).ready(function(){
 
 	});
 
+
+	//import file
 	$('.header .importFile').change(function(event){
 		event.preventDefault();
 		console.log('load import');
@@ -132,6 +160,7 @@ $(document).ready(function(){
 		}
 	});
 
+	//menu click
 	$('.header .hamburger').click(function(event){
 		event.preventDefault();
 		console.log('clicked hamburger');
@@ -143,6 +172,7 @@ $(document).ready(function(){
 		}
 	});
 
+	//about click
 	$('.hamburger.menu .aboutButton').click(function(event){
 		event.preventDefault();
 		console.log('clicked About');
@@ -150,6 +180,7 @@ $(document).ready(function(){
 		var aboutDialog = new InfoDialog('about');
 	});
 
+	//help click
 	$('.hamburger.menu .helpButton').click(function(event){
 		event.preventDefault();
 		console.log('clicked About');
@@ -157,6 +188,7 @@ $(document).ready(function(){
 		var helpDialog = new InfoDialog('help');
 	});
 
+	//change list click
 	$('.hamburger.menu .changesButton').click(function(event){
 		event.preventDefault();
 		console.log('clicked Changes');
@@ -165,6 +197,7 @@ $(document).ready(function(){
 	});
 
 
+	//save name button
 	$('.hamburger.menu .saveNamesButton').click(function(event){
 		event.preventDefault();
 		console.log('Save names Button click');
