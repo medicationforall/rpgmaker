@@ -17,7 +17,7 @@ All of the data is being fed to the page via json. Which was generated using ano
 However it's just json and you can use whatever tool suits your needs.
 
 ## Libraries
-This Application uses [https://jquery.com/](jQuery), [http://jqueryui.com/](jQuery-ui), and [https://github.com/eligrey/FileSaver.js/](FileSaver.js) all of which are being called via cdn. 
+This Application uses [jQuery](https://jquery.com/), [jQuery-ui](http://jqueryui.com/), and [FileSaver.js](https://github.com/eligrey/FileSaver.js/) all of which are being called via cdn. 
 If you want run this application offline you'll need to locally reference those libraries.
 
 ##License
