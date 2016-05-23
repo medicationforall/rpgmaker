@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html>
+<head>
+
+<title>M-RPG Maker</title>
+
+<link href="style.css" type="text/css" rel="stylesheet">
+
+<!--<script src="script/lib/jquery-1.12.3.min.js"></script>
+<script src="script/lib/jquery-ui.min.js"></script>
+<script src="script/lib/FileSaver.min.js"></script>-->
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+
+<script src="script/NPCForm.js"></script>
+<script src="script/NPC.js"></script>
+<script src="script/ListStore.js"></script>
+<script src="script/NameStore.js"></script>
+<script src="script/ListSettingsDialog.js"></script>
+<script src="script/AboutDialog.js"></script>
+<script src="script/HelpDialog.js"></script>
+<script src="script/SaveNamesDialog.js"></script>
+<script src="script/InfoDialog.js"></script>
+<script src="script/npcPage.js"></script>
+</head>
+
+<body>
+
+<div class="hamburger menu"> 
+<a href="http://medicationforall.com" class="aboutButton">Medication For All</a>
+<a href="http://rpg.medicationforall.com/rpgchartmaker/" class="aboutButton">Chart Maker</a>
+<hr />
+<!--<a href="" class="saveNamesButton">Save Names</a>
+<a href="" class="loadNamesButton" title="Load Custom Names">Load Names</a>
+<hr />-->
+<a href="" class="helpButton">Help</a>
+<a href="" class="aboutButton">About</a>
+<a href="" class="changesButton">Changes</a>
+
+</div>
+
+<div class="page">
+
+	<div class="header">
+		<h1>M-RPG Maker</h1>
+		<a href="" class="exportButton">Save</a>
+		<!--<a href="" class="importButton">Load</a>-->
+		<span>Load</span> <input type="file" class="importFile" title="Load File" />
+		<a href="" class="hamburger" title="Menu Options">...</a> 
+	</div>
+
+	<div class="javascriptWarning">Javascript has to be enabled to use this page.</div>
+
+	<div class="form">
+
+		<div>
+		Region<a href="" class="randomChartButton" data-instance="Region" title="Change Random Settings"></a>
+		<select name="region">
+			<option>Random</option>
+			<option value="fae_wood">Fae Wood</option>
+		</select>
+		</div>
+
+		<div>
+		Race<a href="" class="randomChartButton" data-instance="Race" title="Change Random Settings"></a>
+		<select name="race">
+			<option>Random</option>
+			<option valeu="crystalia_human">Crystalia Human</option>
+			<option value="kobold">Kobold</option>
+		</select>
+		</div>
+
+		<div>
+		Gender<a href="" class="randomChartButton" data-instance="Gender" title="Change Random Settings"></a>
+		<select name="gender">
+			<option>Random</option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		</select>
+		</div>
+
+		<div>
+		Age<a href="" class="randomChartButton" data-instance="Age" title="Change Random Settings"></a>
+		<select name="age">
+			<option value="random">Random</option>
+			<option value="male">Adult</option>
+			<option value="female">Old</option>
+		</select>
+		</div>
+
+		<div>
+		Disposition<a href="" class="randomChartButton" data-instance="Disposition" title="Change Random Settings"></a>
+		<select name="disposition">
+			<option value="random">Random</option>
+			<option value="male">Lawful Nuetral</option>
+			<option value="female">Chaotic Evil</option>
+		</select>
+		</div>
+
+		<div>
+			Motivations <input type="checkbox" name="randomMotivationCount" title="Randomize how many Motivations are Rolled" />
+			<input type="number" min="0" value="2" name="motivationCount" />
+		</div>
+
+		<div>
+			Vices <input type="checkbox" name="randomViceCount" title="Randomize how many Vices are Rolled" />
+			<input type="number" min="0" value="1" name="viceCount" />
+		</div>
+
+		<a href="" class="generateButton" title="Generate NPC">Generate</a>
+	</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+
+body{
+margin:0px;
+
+}
+
+/*Hamburger Menu*/
+body.menuOpen .hamburger.menu{
+display:block;
+}
+
+.hamburger.menu{
+width:150px;
+float:right;
+padding-top:20px;
+padding-left:10px;
+background:#5151A0;
+display:none;
+}
+
+.hamburger.menu a{
+color:#fff;
+display:block;
+margin-bottom:8px;
+font-family:arial;
+text-decoration:none;
+}
+
+.hamburger.menu a:hover{
+text-decoration:underline;
+}
+
+
+/*Page*/
+
+body.menuOpen .page{
+	margin-right:160px;
+}
+
+.page{
+background:#fff;
+height:100%;
+}
+
+.page a, .dialog a{
+    background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%);
+    padding: 3px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 0px 5px;
+    border: 1px solid #AB9D9D;
+    color: #000;
+	text-decoration:none;
+}
+
+a.hamburger{
+float:right;
+margin-top:25px;
+margin-right:10px;
+}
+
+.page a:hover{
+text-decoration:underline;
+}
+
+
+
+
+.header h1{
+display:inline-block;
+}
+
+.footer{
+clear:both;
+
+}
+
+
+.closeButton{
+float:right;
+text-decoration:none;
+}
+
+/*Dialog*/
+
+.dialog{
+min-width:250px;
+display:inline-block;
+border:1px solid #000;
+position:absolute;
+top:150px;
+left:200px;
+background:#fff;
+padding:5px;
+border-radius:3px;
+min-height:100px;
+box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+}
+
+.dialog a.closeButton{
+margin-right:-2px;
+margin-top:-2px;
+}
+
+.dialog a.addEntryButton{
+margin:0px;
+padding:1px;
+}
+
+.dialog .handle{
+cursor:move;
+min-height:20px;
+}
+
+.dialog .handle .title{
+font-weight:bold;
+}
+
+.dialog .content .inlineEdit a{
+padding:1px;
+margin: 0px 2px;
+}
+
+.dialog .buttons{
+text-align:center;
+}
+
+.dialog .applyButton, .dialog .saveButton {
+background: linear-gradient(to bottom, #cdeb8e 0%,#a5c956 100%);
+}
+
+.dialog .editControls{
+display:inline;
+}
+
+.dialog.help, .dialog.about, .dialog.changes{
+max-width:300px;
+}
+
+
+
+
+.form{
+border:1px solid #000;
+display:inline-block;
+width:200px;
+vertical-align:top;
+padding:5px;
+margin:3px;
+}
+
+.form div{
+margin-bottom:10px;
+}
+
+.form .randomChartButton{
+width:15px;
+height:15px;
+background:#c0c0c0;
+display:inline-block;
+margin-left:5px;
+background:url('image/blue-dice.png');
+background-size:15px;
+border:none;
+padding:0px;
+}
+
+.form select, .nameForm select{
+display:block;
+}
+
+.form .generateButton{
+display:block;
+text-align:center;
+background: linear-gradient(to bottom, #cdeb8e 0%,#a5c956 100%);
+}
+
+.npc{
+border:1px solid #000;
+display:inline-block;
+width:230px;
+padding:5px;
+vertical-align:top;
+min-height:302px;
+margin:3px;
+background:#fff;
+}
+
+.npc .handle{
+	min-height:20px;
+	cursor:move;
+}
+
+
+
+.npc .name{
+font-weight:bold;
+}
+
+.npc .notes{
+min-width:224px;
+min-height:80px;
+}
+
+
