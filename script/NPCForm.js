@@ -83,7 +83,7 @@ this._setupGenerate=function(){
 }
 
 /**
- *
+ *todo when you move mjs library change this method.
  */
 this._setupCloseButton=function(){
 	$('body').on('click','.closeButton',function(event){

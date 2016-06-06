@@ -81,8 +81,8 @@ float:right;
 text-decoration:none;
 }
 
-/*Dialog*/
 
+/*Dialog*/
 .dialog{
 min-width:250px;
 display:inline-block;
@@ -139,7 +139,7 @@ max-width:300px;
 
 
 
-
+/*Form*/
 .form{
 border:1px solid #000;
 display:inline-block;
@@ -175,6 +175,8 @@ text-align:center;
 background: linear-gradient(to bottom, #cdeb8e 0%,#a5c956 100%);
 }
 
+
+/*NPC*/
 .npc{
 border:1px solid #000;
 display:inline-block;

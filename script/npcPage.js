@@ -193,7 +193,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		console.log('clicked Changes');
 
-		var helpDialog = new InfoDialog('changes');
+		var changeDialog = new InfoDialog('changes');
 	});
 
 
